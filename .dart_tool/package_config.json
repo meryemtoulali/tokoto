@@ -365,10 +365,10 @@
       "name": "ecommerce",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-02-14T20:11:19.583195Z",
+  "generated": "2023-02-15T16:44:18.911461Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }
