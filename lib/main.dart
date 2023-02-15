@@ -1,3 +1,4 @@
+import 'screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/auth/signin_screen.dart';
@@ -19,12 +20,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         fontFamily: "Ubuntu",
       ),
-      initialRoute: "/onboarding",
+      initialRoute: "/profile",
       routes: {
         "/signin": (context) => const SigninScreen(),
         "/signup": (context) => const SignupScreen(),
         "/home": (context) => const HomeScreen(),
-        "/onboarding" : (context) => const OnboardingScreen()
+        "/onboarding" : (context) => const OnboardingScreen(),
+        "/profile" : (context) => const ProfileScreen(),
       },
     );
   }
