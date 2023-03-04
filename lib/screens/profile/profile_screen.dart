@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce/screens/home/widgets/custom_icon_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../models/profile_menu_model.dart';
@@ -21,13 +20,18 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Icon(
-                                Icons.arrow_back_ios_new_rounded,
-                                size: 16,
-                                color: Colors.grey,
+                            children: [
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.pushNamed(context, "/signin");
+                                },
+                                child: const Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                                  size: 16,
+                                  color: Colors.grey,
+                                ),
                               ),
-                              Text(
+                              const Text(
                                 'Profile',
                                 style: TextStyle(
                                   color: Colors.grey,
@@ -35,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.arrow_back_ios_new_rounded,
                                 size: 16,
                                 color: Colors.white,

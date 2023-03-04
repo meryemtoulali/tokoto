@@ -5,6 +5,9 @@ import 'widgets/categories.dart';
 import 'widgets/custom_app_bar.dart';
 import 'widgets/popular_products.dart';
 import 'widgets/special_offers.dart';
+import '../../enums/menu_state.dart';
+import 'widgets/custom_nav_bar.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,6 +34,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar:
+          const CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }

@@ -1,3 +1,6 @@
+import 'screens/cart/cart_screen.dart';
+
+import 'screens/product_details/product_details_screen.dart';
 import 'screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/onboarding/onboarding_screen.dart';
@@ -27,6 +30,9 @@ class MyApp extends StatelessWidget {
         "/home": (context) => const HomeScreen(),
         "/onboarding" : (context) => const OnboardingScreen(),
         "/profile" : (context) => const ProfileScreen(),
+        "/product_details" : (context) => const ProductDetailsScreen(),
+        "/cart" : (context) => const CartScreen(),
+
       },
     );
   }

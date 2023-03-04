@@ -3,6 +3,8 @@ import 'package:ecommerce/screens/home/widgets/popular_product_item.dart';
 import 'package:ecommerce/screens/home/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
+import '../../../models/product_model.dart';
+
 class PopularProducts extends StatelessWidget {
   const PopularProducts({super.key});
 
@@ -16,13 +18,13 @@ class PopularProducts extends StatelessWidget {
         width: double.maxFinite,
         height: 300,
         child: ListView.builder(
-            itemCount: popularProductsList.length,
+            itemCount: productsList.length,
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               return PopularProductItem(
-                popularProduct: popularProductsList[index],
+                popularProduct: productsList[index],
               );
             }))
       ],
