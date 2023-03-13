@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../models/product_model.dart';
+import 'product_customization.dart';
 import 'top_rounded_corners.dart';
 
 class ProductDetailsBody extends StatelessWidget {
@@ -13,7 +14,7 @@ class ProductDetailsBody extends StatelessWidget {
     return TopRoundedCorners(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           Container(
               width: double.maxFinite,
@@ -53,7 +54,36 @@ class ProductDetailsBody extends StatelessWidget {
             SizedBox(width: 8),
             Icon(Icons.arrow_forward_ios_rounded,
                 size: 10, color: Color(0xfff77547)),
-          ])
+          ]),
+          TopRoundedCorners(
+              color: const Color(0xFFF6F7F9),
+              child: Column(children: [
+                ProductCustomization(product: product),
+                TopRoundedCorners(
+                    color: Colors.white,
+                    child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 20),
+                        child: SizedBox(
+                            width: double.infinity,
+                            height: 56,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.orange,
+                              ),
+                              onPressed: () {},
+                              child: const Text(
+                                "Add To Cart",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )))),
+              ])),
         ]),
       ),
     );
