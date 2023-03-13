@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductModel {
   final int id;
+  final int storeId;
   final String title, description;
   final List<String> images;
   final List<Color> colors;
@@ -11,6 +12,7 @@ class ProductModel {
 
   ProductModel({
     required this.id,
+    required this.storeId,
     required this.images,
     required this.colors,
     this.rating = 0.0,
@@ -33,6 +35,7 @@ List<ProductModel> productsList = [
       "assets/images/ps4_console_white_4.png",
     ],
     store: "Wano Store",
+    storeId: 1,
     colors: [
       Color(0xFFF6625E),
       Color(0xFF836DB8),
@@ -58,6 +61,7 @@ List<ProductModel> productsList = [
       Colors.white,
     ],
     store: "Sportz Store",
+    storeId: 2,
     title: "Nike Sport White - Man Pant",
     price: 50.5,
     description: description,
@@ -76,6 +80,7 @@ List<ProductModel> productsList = [
       Colors.white,
     ],
     store: "Sportz Store",
+    storeId: 2,
     title: "Gloves XC Omega - Polygon",
     price: 36.55,
     description: description,
@@ -89,6 +94,7 @@ List<ProductModel> productsList = [
       "assets/images/wireless headset.png",
     ],
     store: "Wano Store",
+    storeId: 1,
     colors: [
       Color(0xFFF6625E),
       Color(0xFF836DB8),

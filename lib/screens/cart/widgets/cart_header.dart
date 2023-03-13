@@ -6,25 +6,25 @@ class CartHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(
+          const Icon(
             Icons.arrow_back_ios_new_rounded,
             size: 16,
             color: Colors.grey,
           ),
           Column(children: [
-            Text(
+            const Text(
               'Your Cart',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 6),
-            Text(
+            const SizedBox(height: 6),
+            const Text(
               '4 items',
               style: TextStyle(
                 color: Colors.grey,
@@ -33,7 +33,7 @@ class CartHeader extends StatelessWidget {
               ),
             ),
           ]),
-          Icon(
+          const Icon(
             Icons.arrow_back_ios_new_rounded,
             size: 16,
             color: Colors.white,
