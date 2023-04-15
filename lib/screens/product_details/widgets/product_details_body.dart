@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
+import '../../../controllers/product_controller.dart';
 import '../../../models/product_model.dart';
 import 'product_customization.dart';
 import 'top_rounded_corners.dart';
@@ -11,6 +13,7 @@ class ProductDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProductController productController = Get.find<ProductController>();
     return TopRoundedCorners(
       color: Colors.white,
       child: Padding(
@@ -24,22 +27,32 @@ class ProductDetailsBody extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
                   ))),
-          Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-              margin: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                color: product.isFavourite
-                    ? const Color(0xffffe6e6)
-                    : const Color(0xfff5f6f9),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                ),
-              ),
-              child: SvgPicture.asset("assets/icons/Heart Icon_2.svg",
-                  color: product.isFavourite
-                      ? const Color(0xffff4848)
-                      : const Color(0xffdbdee4))),
+          GestureDetector(
+            onTap:() {
+              productController.toggleFavorite(product);
+
+            },
+            child: GetBuilder<ProductController>(
+              builder: (controller) {
+                return Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: product.isFavourite
+                          ? const Color(0xffffe6e6)
+                          : const Color(0xfff5f6f9),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: SvgPicture.asset("assets/icons/Heart Icon_2.svg",
+                        color: product.isFavourite
+                            ? const Color(0xffff4848)
+                            : const Color(0xffdbdee4)));
+              }
+            ),
+          ),
           Text(product.description,
               style: const TextStyle(
                 color: Colors.grey,

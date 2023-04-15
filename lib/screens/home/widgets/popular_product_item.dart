@@ -1,7 +1,9 @@
 import 'package:ecommerce/models/popular_product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/screens/home/widgets/heart_icon_button.dart';
+import 'package:get/get.dart';
 
+import '../../../controllers/product_controller.dart';
 import '../../../models/product_model.dart';
 import '../../product_details/product_details_screen.dart';
 
@@ -15,8 +17,9 @@ class PopularProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.pushNamed(context, "/product_details", arguments: ProductDetailsScreenArguments(popularProduct));
+      onTap: () {
+        Navigator.pushNamed(context, "/product_details",
+            arguments: ProductDetailsScreenArguments(popularProduct));
       },
       child: Container(
           width: 130,
@@ -59,7 +62,13 @@ class PopularProductItem extends StatelessWidget {
                       fontSize: 17,
                     ),
                   ),
-                  HeartIconButton(isFavorite: popularProduct.isFavourite),
+                  GetBuilder<ProductController>(builder: (controller) {
+                    return HeartIconButton(
+                        isFavorite: popularProduct.isFavourite,
+                        onPressed: () {
+                          controller.toggleFavorite(popularProduct);
+                        });
+                  }),
                 ],
               )
             ],
